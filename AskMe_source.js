@@ -57,7 +57,7 @@ const download = function (url) {
 const args = process.argv;
 
 let query = args[2].replace('\'','');
-let language="java";  //default language is language argument is not provided
+let language="java";  //default language is java, if  language argument is not provided
 
 if (typeof args[3]!=="undefined") {
 language = args[3].replace('\'','');
