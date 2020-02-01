@@ -57,7 +57,11 @@ const download = function (url) {
 const args = process.argv;
 
 let query = args[2].replace('\'','');
-let language = args[3].replace('\'','');
+let language="java";  //default language is language argument is not provided
+
+if (typeof args[3]!=="undefined") {
+language = args[3].replace('\'','');
+}
 
 search(query,language).then((url) => {
    download(url).then((html) => {
