@@ -23,7 +23,6 @@ const search = function (query, language) {
                     return $doc.find('div.kCrYT a').attr('href');
                   }
               }, function (err, result){
-                //ß  console.log(result);
               });
 
               promise.done(function(result){
@@ -56,14 +55,11 @@ const download = function (url) {
   }
 
 const args = process.argv;
-console.log(args);
 
 let query = args[2].replace('\'','');
 let language = args[3].replace('\'','');
 
 search(query,language).then((url) => {
-  console.log(url);
-//  return self.download(url)
    download(url).then((html) => {
         let answer = scrape(html)
         if (answer === '') {
